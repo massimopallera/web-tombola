@@ -19,5 +19,51 @@
 
 body{
     /* font-family: var(--font); */
-    background: var();
+    background: var(--primary-color);
+}
+
+header{
+    text-align: center;
+    font-family: var(--font);
+    color: white;
+    font-size: 24px;
+
+    padding: .5rem 0;
+}
+
+.container{
+    width: 80%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.col-1{
+    width: calc((100% / 12) * 1);
+
+    /* width: calc(100% / 10) */
+}
+
+main{
+    #table{
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+    }
+
+    #table .card{
+
+        width: 2.5rem;
+        aspect-ratio: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: var(--number-color);
+        border-radius: 50%;
+    }
 }
