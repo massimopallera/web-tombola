@@ -75,6 +75,12 @@ main{
     
             background: var(--number-color);
             border-radius: 50%;
+
+            &.active{
+                background-color: var(--number-extracted-color);
+                box-shadow: var(--number-extracted-shadow);
+            }
+
         }
     }
 
@@ -133,3 +139,5 @@ main{
     }
 
 }
+
+
