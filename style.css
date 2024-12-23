@@ -28,7 +28,7 @@ header{
     color: white;
     font-size: 24px;
 
-    padding: .5rem 0;
+    padding: 1.5rem 0;
 }
 
 .container{
@@ -75,7 +75,14 @@ header{
     text-align: center;
 }
 
+.hide{
+    visibility: hidden;
+}
+
 main{
+
+    margin-bottom: 1.5rem;
+
     #table{
         display: flex;
         flex-wrap: wrap;
@@ -113,6 +120,7 @@ main{
 
         padding: 3rem 0;
 
+        
 
         #extracted{
             width: 3rem;
