@@ -3,11 +3,15 @@ const lastExtracted = 'Ultimo numero estratto:'
 const endGame = 'Tutti i numeri estratti!'
 const defaultText = '';
 
+const numbersPerCard = 15
+const cl = [] //cardList
+
 // Variables
 const endBtn = document.getElementById('endgame');
 const table = document.getElementById('table');
 const extractBtn = document.getElementById('extract');
 const lastExtractedEl = document.querySelector('#buttons-container > h3')
+const formEl = document.querySelector('#new-cards form');
 
 
 // Create table numbers
@@ -59,3 +63,36 @@ endBtn.addEventListener('click', () => {
         extractBtn.disabled = false
     }
 });
+
+
+formEl.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const inputEl = document.getElementById('cards') 
+    const cards = Number(inputEl.value);
+    // console.log(typeof cards);
+
+    //if cards are added, it will disappear
+    if(cards > 0 && cards <= 50 && typeof(cards) === 'number') { // create a limit
+        formEl.classList.add('hide')
+        // create cards
+        for(let i = 0; i < cards; i++){
+            const newCard = []
+            for(let j = 0; j < numbersPerCard; j++){
+                let number = Math.floor(Math.random()*100)
+                // console.log(number);
+                
+
+                while(newCard.includes(number) && newCard.length != 0){
+                    number = Math.floor(Math.random()*100)
+                }
+
+                newCard.push(number)
+            }
+            cl.push(newCard.sort(function(a,b){return a-b})) // sort has some problems to sort with numbers, this function fix the problem
+        }
+
+        // console.log(cl);
+        
+    }
+    
+})
