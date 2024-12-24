@@ -108,9 +108,6 @@ main{
 
         }
     }
-
-
-
     #buttons-container{
 
         display: flex;
@@ -162,6 +159,35 @@ main{
         }
 
 
+    }
+
+    #new-cards{
+        margin: 2rem auto;
+        form{
+            display: flex;
+            gap: 1rem;
+            /* flex-direction: column; */
+            align-items: center;
+
+            label{
+                font-size: 1.2rem;
+            }
+            input{
+                padding:.5rem;
+                border-radius: 10px;
+                border: none;
+                margin-right:.5rem;
+            }
+            button{
+                padding:.75rem 1.5rem;
+                border-radius: 10px;
+                background: var(--end-game-color);
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+
+        }
     }
 
 }
