@@ -71,6 +71,10 @@ header{
     width: calc((100% / 12) * 4);
 }
 
+.col-12{
+    width: 100%;
+}
+
 .text-center{
     text-align: center;
 }
@@ -78,6 +82,26 @@ header{
 .hide{
     visibility: hidden;
 }
+
+.card{
+    
+    width: 2.5rem;
+    aspect-ratio: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--number-color);
+    border-radius: 50%;
+
+    &.active{
+        background-color: var(--number-extracted-color);
+        box-shadow: var(--number-extracted-shadow);
+    }
+
+}
+
 
 main{
 
@@ -89,24 +113,6 @@ main{
         gap: .5rem;
         justify-content: center;
         
-        .card{
-    
-            width: 2.5rem;
-            aspect-ratio: 1;
-    
-            display: flex;
-            align-items: center;
-            justify-content: center;
-    
-            background: var(--number-color);
-            border-radius: 50%;
-
-            &.active{
-                background-color: var(--number-extracted-color);
-                box-shadow: var(--number-extracted-shadow);
-            }
-
-        }
     }
     #buttons-container{
 
@@ -187,6 +193,17 @@ main{
                 cursor: pointer;
             }
 
+        }
+    }
+
+    #cards{
+        display: flex;
+        flex-direction: column;
+
+        gap: 1rem;
+
+        .col-12.row{
+            gap: .5rem
         }
     }
 

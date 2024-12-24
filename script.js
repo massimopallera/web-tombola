@@ -12,6 +12,7 @@ const table = document.getElementById('table');
 const extractBtn = document.getElementById('extract');
 const lastExtractedEl = document.querySelector('#buttons-container > h3')
 const formEl = document.querySelector('#new-cards form');
+const cardsEl = document.getElementById('cards')
 
 
 // Create table numbers
@@ -67,7 +68,7 @@ endBtn.addEventListener('click', () => {
 
 formEl.addEventListener('submit', (e) => {
     e.preventDefault();
-    const inputEl = document.getElementById('cards') 
+    const inputEl = document.getElementById('insert-cards') 
     const cards = Number(inputEl.value);
     // console.log(typeof cards);
 
@@ -92,6 +93,19 @@ formEl.addEventListener('submit', (e) => {
         }
 
         // console.log(cl);
+        for(let i = 0; i < cl.length; i++){
+            const markup = `
+            <div class='col-12'>
+                <div class='row'>
+                    <div>${i+1}</div> 
+
+                    ${cl[i].map(element => `<span class="card">${element}</span>`).join(" ")}        
+                </div>
+            </div>
+            `
+            cardsEl.innerHTML += markup
+        }
+
         
     }
     
