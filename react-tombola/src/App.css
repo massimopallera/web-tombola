@@ -1,0 +1,212 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: #17a494;
+    --number-extracted-color: #f88d9f;
+    --number-extracted-shadow: #b62727;
+    --number-color: #fff;
+    --number-shadow: #c9cbcc;
+    --end-game-color: #864365;
+    --extract-number-color: #f3a101;
+
+
+    --font: "Gochi Hand", sans-serif;
+}
+
+body{
+    /* font-family: var(--font); */
+    background: var(--primary-color);
+}
+
+header{
+    text-align: center;
+    font-family: var(--font);
+    color: white;
+    font-size: 24px;
+
+    padding: 1.5rem 0;
+}
+
+.container{
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        padding: 0 .5rem;
+    }
+}
+
+.row{
+    display: flex;
+
+    @media screen and (max-width:768px){
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center;      
+    }
+}
+
+.col-1{
+    width: calc((100% / 12) * 1);
+    /* width: calc(100% / 10) // Alternative */
+    @media screen and (max-width:568px) {
+        width: auto;    
+    }
+}
+
+.col-8{
+    width: calc((100% / 12) * 8);
+    @media screen and (max-width:568px) {
+        width: 100%;    
+    }
+}
+
+.col-4{
+    width: calc((100% / 12) * 4);
+}
+
+.col-12{
+    width: 100%;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.hide{
+    visibility: hidden;
+}
+
+.card{
+    
+    width: 2.5rem;
+    aspect-ratio: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--number-color);
+    border-radius: 50%;
+
+    &.active{
+        background-color: var(--number-extracted-color);
+        box-shadow: var(--number-extracted-shadow);
+    }
+
+}
+
+
+main{
+
+    margin-bottom: 1.5rem;
+
+    #table{
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+        justify-content: center;
+        
+    }
+    #buttons-container{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        padding: 3rem 0;
+
+        
+
+        #extracted{
+            width: 3rem;
+            aspect-ratio: 1;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: var(--number-color);
+        }
+
+        hr{
+            width: 8rem;
+        }
+
+        #extract{
+            background: var(--extract-number-color);
+            border: none;
+            color: white;
+            padding: .75rem 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+
+            margin-bottom: 1rem;
+
+            /* transition: background-color.3s ease-in-out; */
+        }
+
+        #endgame{
+            background: var(--end-game-color);
+            border: none;
+            color: white;
+            padding: .75rem 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+
+            /* transition: background-color.3s ease-in-out; */
+        }
+
+
+    }
+
+    #new-cards{
+        margin: 2rem auto;
+        form{
+            display: flex;
+            gap: 1rem;
+            /* flex-direction: column; */
+            align-items: center;
+
+            label{
+                font-size: 1.2rem;
+            }
+            input{
+                padding:.5rem;
+                border-radius: 10px;
+                border: none;
+                margin-right:.5rem;
+            }
+            button{
+                padding:.75rem 1.5rem;
+                border-radius: 10px;
+                background: var(--end-game-color);
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+
+        }
+    }
+
+    #cards{
+        display: flex;
+        flex-direction: column;
+
+        gap: 1rem;
+
+        .col-12.row{
+            gap: .5rem
+        }
+    }
+
+}
+
+
